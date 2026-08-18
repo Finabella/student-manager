@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow · Student Task Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">Task<span>Flow</span></div>
+                        <div class="tagline">
+                            <i class="fas fa-bolt"></i>
+                            <span>crush your tasks, own your day</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="badge-header">
+                <i class="fas fa-graduation-cap"></i>
+                student edition
+            </div>
+        </header>
+
+        <!-- User Bar -->
+        <div class="user-bar">
+            <div class="user-greeting">
+                <i class="fas fa-user-circle"></i>
+                <span>Welcome, <span id="userNameDisplay" class="username">Guest</span></span>
+            </div>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Log In
+                </button>
+                <button class="btn btn-primary" id="signupBtn">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+                <button class="btn btn-outline" id="logoutBtn" style="display: none;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+
+        <!-- Task Form -->
+        <div class="task-form">
+            <div class="form-group">
+                <label for="taskTitleInput">
+                    <i class="far fa-circle"></i> What's on your mind?
+                </label>
+                <input type="text" id="taskTitleInput" placeholder="e.g., Complete project proposal">
+            </div>
+            <div class="form-group">
+                <label for="taskStatusSelect">
+                    <i class="fas fa-flag"></i> Status
+                </label>
+                <select id="taskStatusSelect">
+                    <option value="pending">⏳ Pending</option>
+                    <option value="complete">✅ Done</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary" id="addTaskBtn">
+                    <i class="fas fa-plus-circle"></i> Add Task
+                </button>
+                <button class="btn btn-outline" id="clearTasksBtn" style="color: #b75b4a;">
+                    <i class="fas fa-trash-alt"></i> Clear All
+                </button>
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list" id="taskListContainer">
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-clipboard-list"></i>
+                <h3>No tasks yet</h3>
+                <p>Start by adding your first task above </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <i class="fas fa-bolt"></i> made with <i class="fas fa-heart" style="color: #cb6e4e;"></i> for students
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-box">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <h2 id="modalTitle">Welcome Back</h2>
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> Username</label>
+                <input type="text" id="modalUsername" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-lock"></i> Password</label>
+                <input type="password" id="modalPassword" placeholder="Enter your password">
+            </div>
+            <button class="btn btn-primary" id="modalActionBtn">
+                <i class="fas fa-sign-in-alt"></i> Log In
+            </button>
+            <div class="modal-toggle" id="modalToggleText">
+                New here? <a href="#" id="modalToggleLink">Create an account</a>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="js/app.js"></script>
+</body>
+</html>
